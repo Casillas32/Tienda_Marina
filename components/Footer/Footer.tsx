@@ -1,6 +1,6 @@
 'use client'
 import Link from 'next/link'
-import { MessageCircle, Heart, Mail, Phone, Instagram } from 'lucide-react'
+import { MessageCircle, Heart, Mail, Phone } from 'lucide-react'
 import styles from './Footer.module.css'
 
 export default function Footer() {
@@ -23,7 +23,7 @@ export default function Footer() {
               </p>
               <div className={styles.social}>
                 <a href="https://www.instagram.com/marina.molina.9277583/?hl=es" target="_blank" rel="noopener noreferrer" className={styles.socialLink} aria-label="Instagram">
-                  <Instagram size={18} />
+                  📸
                 </a>
                 <a href="https://wa.me/525617644737" target="_blank" rel="noopener noreferrer" className={styles.socialLink} aria-label="WhatsApp">
                   <MessageCircle size={18} />

@@ -1,6 +1,6 @@
 'use client'
 import { useState } from 'react'
-import { MessageCircle, Mail, Phone, Send, MapPin, Instagram } from 'lucide-react'
+import { MessageCircle, Mail, Phone, Send, MapPin } from 'lucide-react'
 import toast from 'react-hot-toast'
 import styles from './page.module.css'
 
@@ -90,7 +90,7 @@ export default function ContactPage() {
                 </a>
                 <a href="https://www.instagram.com/marina.molina.9277583/?hl=es" className={styles.infoItem} target="_blank" rel="noopener noreferrer">
                   <div className={styles.infoIcon} style={{ background: 'rgba(193,53,132,0.1)', color: '#C13584' }}>
-                    <Instagram size={20} />
+                    <span style={{ fontSize: '20px' }}>📸</span>
                   </div>
                   <div>
                     <p className={styles.infoLabel}>Instagram</p>
