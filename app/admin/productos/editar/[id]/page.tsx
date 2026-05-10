@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation'
 import { Upload, X, ArrowLeft, Save, ImagePlus } from 'lucide-react'
 import Image from 'next/image'
 import toast from 'react-hot-toast'
-import styles from '../nuevo/page.module.css' // Reusing styles
+import styles from '../../nuevo/page.module.css' // Corrected path
 
 type Category = { id: string; name: string; slug: string; icon: string }
 
