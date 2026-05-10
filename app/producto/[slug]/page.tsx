@@ -70,12 +70,13 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
   const handleAddToCart = () => {
     if (isOutOfStock) return
     addItem({
-      id: product.id,
+      product_id: product.id,
       name: product.name,
       price: product.price,
       image: product.images?.[0] || '',
-      quantity,
-    })
+      stock: product.stock,
+      slug: product.slug,
+    }, quantity)
     toast.success('¡Agregado al carrito! 🛍️')
   }
 

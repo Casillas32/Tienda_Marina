@@ -16,7 +16,7 @@ export type CartItem = {
 
 type CartContextType = {
   items: CartItem[]
-  addItem: (product: Omit<CartItem, 'id' | 'quantity'>) => void
+  addItem: (product: Omit<CartItem, 'id' | 'quantity'>, quantity?: number) => void
   removeItem: (productId: string) => void
   updateQuantity: (productId: string, quantity: number) => void
   clearCart: () => void
@@ -51,7 +51,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
     localStorage.setItem(CART_KEY, JSON.stringify(items))
   }, [items])
 
-  const addItem = useCallback((product: Omit<CartItem, 'id' | 'quantity'>) => {
+  const addItem = useCallback((product: Omit<CartItem, 'id' | 'quantity'>, quantity: number = 1) => {
     // If user is not logged in, show auth modal
     if (!user) {
       setAuthRedirectAction('cart')
@@ -69,12 +69,12 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
         toast.success('Cantidad actualizada en el carrito')
         return prev.map(i =>
           i.product_id === product.product_id
-            ? { ...i, quantity: i.quantity + 1 }
+            ? { ...i, quantity: Math.min(i.quantity + quantity, product.stock) }
             : i
         )
       }
       toast.success('¡Producto agregado al carrito! 🛒')
-      return [...prev, { ...product, id: crypto.randomUUID(), quantity: 1 }]
+      return [...prev, { ...product, id: crypto.randomUUID(), quantity }]
     })
     setIsCartOpen(true)
   }, [user, setShowAuthModal, setAuthRedirectAction])
