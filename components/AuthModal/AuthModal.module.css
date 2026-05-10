@@ -1,0 +1,179 @@
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 200;
+  width: 90%;
+  max-width: 440px;
+  background: var(--color-surface);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-xl);
+  padding: var(--space-8);
+  animation: fadeIn 0.3s ease;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.closeBtn {
+  position: absolute;
+  top: var(--space-4);
+  right: var(--space-4);
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--neutral-100);
+  color: var(--neutral-500);
+  transition: all var(--transition-fast);
+  border: none;
+  cursor: pointer;
+}
+
+.closeBtn:hover {
+  background: var(--neutral-200);
+  color: var(--color-text);
+}
+
+.modalHeader {
+  text-align: center;
+  margin-bottom: var(--space-6);
+}
+
+.modalLogo {
+  font-size: 2.5rem;
+  margin-bottom: var(--space-3);
+  display: block;
+}
+
+.modalTitle {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--color-text);
+  margin-bottom: var(--space-2);
+}
+
+.modalSubtitle {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  background: var(--neutral-100);
+  border-radius: var(--radius-lg);
+  padding: var(--space-1);
+  margin-bottom: var(--space-6);
+}
+
+.tab {
+  flex: 1;
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-md);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--neutral-500);
+  transition: all var(--transition-base);
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: var(--font-body);
+}
+
+.tabActive {
+  background: var(--color-surface);
+  color: var(--brand-primary);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Form */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.inputWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.inputIcon {
+  position: absolute;
+  left: var(--space-3);
+  color: var(--neutral-400);
+  pointer-events: none;
+}
+
+.inputWithIcon {
+  padding-left: calc(var(--space-3) + 16px + var(--space-2));
+}
+
+.inputWithEndIcon {
+  padding-right: calc(var(--space-3) + 16px + var(--space-2));
+}
+
+.eyeBtn {
+  position: absolute;
+  right: var(--space-3);
+  color: var(--neutral-400);
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: color var(--transition-fast);
+}
+
+.eyeBtn:hover {
+  color: var(--brand-primary);
+}
+
+.error {
+  font-size: 0.8rem;
+  color: var(--color-error);
+  display: block;
+}
+
+.submitBtn {
+  width: 100%;
+  justify-content: center;
+  margin-top: var(--space-2);
+}
+
+.submitBtn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+.spinner {
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(255,255,255,0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  display: inline-block;
+}
+
+.switchMode {
+  text-align: center;
+  font-size: 0.875rem;
+  color: var(--neutral-500);
+  margin-top: var(--space-4);
+}
+
+.switchMode button {
+  color: var(--brand-primary);
+  font-weight: 600;
+  text-decoration: underline;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-body);
+}
