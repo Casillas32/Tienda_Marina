@@ -1,5 +1,5 @@
 'use client'
-import { useEffect, useState } from 'react'
+import { useEffect, useState, use } from 'react'
 import { supabase } from '@/lib/supabase'
 import { useCart } from '@/context/CartContext'
 import Image from 'next/image'
@@ -10,8 +10,9 @@ import toast from 'react-hot-toast'
 import styles from './page.module.css'
 import ProductCard from '@/components/ProductCard/ProductCard'
 
-export default function ProductPage({ params }: { params: { slug: string } }) {
+export default function ProductPage({ params }: { params: Promise<{ slug: string }> }) {
   const router = useRouter()
+  const { slug } = use(params)
   const { addItem } = useCart()
   const [product, setProduct] = useState<any>(null)
   const [relatedProducts, setRelatedProducts] = useState<any[]>([])
@@ -25,7 +26,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
       const { data, error } = await supabase
         .from('products')
         .select('*, category:categories(name, slug)')
-        .eq('slug', params.slug)
+        .eq('slug', slug)
         .eq('active', true)
         .single()
 
@@ -52,7 +53,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
     }
 
     loadProduct()
-  }, [params.slug, router])
+  }, [slug, router])
 
   if (loading) {
     return (

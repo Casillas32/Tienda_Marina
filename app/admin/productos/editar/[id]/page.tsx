@@ -1,5 +1,5 @@
 'use client'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, use } from 'react'
 import { supabase } from '@/lib/supabase'
 import { useRouter } from 'next/navigation'
 import { Upload, X, ArrowLeft, Save, ImagePlus } from 'lucide-react'
@@ -9,8 +9,9 @@ import styles from '../../nuevo/page.module.css' // Corrected path
 
 type Category = { id: string; name: string; slug: string; icon: string }
 
-export default function EditProductPage({ params }: { params: { id: string } }) {
+export default function EditProductPage({ params }: { params: Promise<{ id: string }> }) {
   const router = useRouter()
+  const { id } = use(params)
   const [categories, setCategories] = useState<Category[]>([])
   const [loading, setLoading] = useState(false)
   const [initialLoading, setInitialLoading] = useState(true)
@@ -31,7 +32,7 @@ export default function EditProductPage({ params }: { params: { id: string } }) 
       if (catData) setCategories(catData as Category[])
 
       // Load product
-      const { data: prodData, error } = await supabase.from('products').select('*').eq('id', params.id).single()
+      const { data: prodData, error } = await supabase.from('products').select('*').eq('id', id).single()
       
       if (error || !prodData) {
         toast.error('Producto no encontrado')
@@ -54,7 +55,7 @@ export default function EditProductPage({ params }: { params: { id: string } }) 
       setInitialLoading(false)
     }
     loadData()
-  }, [params.id, router])
+  }, [id, router])
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const target = e.target as HTMLInputElement
@@ -121,7 +122,7 @@ export default function EditProductPage({ params }: { params: { id: string } }) 
         active: form.active,
         customizable: form.customizable,
         tags,
-      }).eq('id', params.id)
+      }).eq('id', id)
 
       if (error) throw error
 
