@@ -107,7 +107,7 @@ export default function CheckoutPage() {
       formData.append('access_key', process.env.NEXT_PUBLIC_WEB3FORMS_KEY || '')
       formData.append('subject', `💳 Nuevo pedido #${orderData.id.slice(0,8)} de ${profile?.full_name || user?.email}`)
       formData.append('from_name', 'Un Suspiro Navideño')
-      formData.append('email_to', 'tu-email-de-notificaciones@gmail.com') // Cambia esto por tu correo real si quieres
+      formData.append('email_to', 'pelusa122705@gmail.com')
       formData.append('customer', profile?.full_name || 'Cliente')
       formData.append('order_id', orderData.id)
       formData.append('total', `$${total.toFixed(2)} MXN`)

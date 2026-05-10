@@ -1,6 +1,6 @@
 'use client'
 import { useState } from 'react'
-import { MessageCircle, Mail, Phone, Send, MapPin } from 'lucide-react'
+import { MessageCircle, Mail, Phone, Send, MapPin, Instagram } from 'lucide-react'
 import toast from 'react-hot-toast'
 import styles from './page.module.css'
 
@@ -70,31 +70,31 @@ export default function ContactPage() {
             <div className={styles.infoCard}>
               <h2 className={styles.infoTitle}>Contáctanos directamente</h2>
               <div className={styles.infoItems}>
-                <a href="https://wa.me/521234567890" className={styles.infoItem} target="_blank" rel="noopener noreferrer">
+                <a href="https://wa.me/525617644737" className={styles.infoItem} target="_blank" rel="noopener noreferrer">
                   <div className={styles.infoIcon} style={{ background: 'rgba(37,211,102,0.1)', color: '#25D366' }}>
                     <MessageCircle size={20} />
                   </div>
                   <div>
                     <p className={styles.infoLabel}>WhatsApp</p>
-                    <p className={styles.infoValue}>+52 123 456 7890</p>
+                    <p className={styles.infoValue}>+52 561 764 4737</p>
                   </div>
                 </a>
-                <a href="mailto:contacto@unsuspironavideno.com" className={styles.infoItem}>
+                <a href="mailto:pelusa122705@gmail.com" className={styles.infoItem}>
                   <div className={styles.infoIcon}>
                     <Mail size={20} />
                   </div>
                   <div>
                     <p className={styles.infoLabel}>Email</p>
-                    <p className={styles.infoValue}>contacto@unsuspironavideno.com</p>
+                    <p className={styles.infoValue}>pelusa122705@gmail.com</p>
                   </div>
                 </a>
-                <a href="https://instagram.com" className={styles.infoItem} target="_blank" rel="noopener noreferrer">
+                <a href="https://www.instagram.com/marina.molina.9277583/?hl=es" className={styles.infoItem} target="_blank" rel="noopener noreferrer">
                   <div className={styles.infoIcon} style={{ background: 'rgba(193,53,132,0.1)', color: '#C13584' }}>
-                    <Phone size={20} />
+                    <Instagram size={20} />
                   </div>
                   <div>
                     <p className={styles.infoLabel}>Instagram</p>
-                    <p className={styles.infoValue}>@unsuspironavideno</p>
+                    <p className={styles.infoValue}>@marina.molina.9277583</p>
                   </div>
                 </a>
                 <div className={styles.infoItem}>

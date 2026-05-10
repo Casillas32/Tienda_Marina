@@ -1,6 +1,6 @@
 'use client'
 import Link from 'next/link'
-import { MessageCircle, Heart, Mail, Phone } from 'lucide-react'
+import { MessageCircle, Heart, Mail, Phone, Instagram } from 'lucide-react'
 import styles from './Footer.module.css'
 
 export default function Footer() {
@@ -22,10 +22,10 @@ export default function Footer() {
                 Cada pieza es única y especial, como tú. 💕
               </p>
               <div className={styles.social}>
-                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className={styles.socialLink} aria-label="Instagram">
-                  📸
+                <a href="https://www.instagram.com/marina.molina.9277583/?hl=es" target="_blank" rel="noopener noreferrer" className={styles.socialLink} aria-label="Instagram">
+                  <Instagram size={18} />
                 </a>
-                <a href="https://wa.me/521234567890" target="_blank" rel="noopener noreferrer" className={styles.socialLink} aria-label="WhatsApp">
+                <a href="https://wa.me/525617644737" target="_blank" rel="noopener noreferrer" className={styles.socialLink} aria-label="WhatsApp">
                   <MessageCircle size={18} />
                 </a>
               </div>
@@ -57,17 +57,17 @@ export default function Footer() {
             <div className={styles.column}>
               <h3 className={styles.columnTitle}>Contáctanos</h3>
               <div className={styles.contactList}>
-                <a href="mailto:contacto@unsuspironavideno.com" className={styles.contactItem}>
+                <a href="mailto:pelusa122705@gmail.com" className={styles.contactItem}>
                   <Mail size={15} />
-                  <span>contacto@unsuspironavideno.com</span>
+                  <span>pelusa122705@gmail.com</span>
                 </a>
-                <a href="https://wa.me/521234567890" className={styles.contactItem}>
+                <a href="https://wa.me/525617644737" className={styles.contactItem}>
                   <MessageCircle size={15} />
                   <span>WhatsApp</span>
                 </a>
-                <a href="tel:+521234567890" className={styles.contactItem}>
+                <a href="tel:+525617644737" className={styles.contactItem}>
                   <Phone size={15} />
-                  <span>+52 123 456 7890</span>
+                  <span>+52 561 764 4737</span>
                 </a>
               </div>
             </div>
